@@ -1,0 +1,21 @@
+{
+  "name": "imdbdatacollector",
+  "version": "1.0.0",
+  "description": "data collector for cs478 semester project",
+  "main": "collector.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jvansteeter/IMDBDataCollector.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jvansteeter/IMDBDataCollector/issues"
+  },
+  "homepage": "https://github.com/jvansteeter/IMDBDataCollector#readme"
+}
