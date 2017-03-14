@@ -5,7 +5,7 @@ var fs = require('fs');
 var readline = require('readline');
 
 var rd = readline.createInterface({
-    input: fs.createReadStream('tomatoURLs.csv'),
+    input: fs.createReadStream('tomatoURLs2014.csv'),
     output: process.stdout,
     console: false
 });
@@ -28,11 +28,11 @@ rd.on('line', function(line)
             {
                 var score = result[0].replace('<span class="meter-value superPageFontColor"><span>', "").replace('</span>%</span>', '');
                 console.log(parts[0] + " " + score);
-                fs.appendFileSync('result.csv', parts[0] + "," + score + "\n");
+                fs.appendFileSync('tomatoresult.csv', parts[0] + "," + score + "\n");
             }
             else
             {
-                fs.appendFileSync('result.csv', parts[0] + "," + "bad tomato url\n");
+                fs.appendFileSync('tomatoresult.csv', parts[0] + "," + "bad tomato url\n");
                 console.log(parts[0] + " " + "unknown")
             }
         });

@@ -5,7 +5,7 @@ var fs = require('fs');
 var readline = require('readline');
 
 var rd = readline.createInterface({
-    input: fs.createReadStream('mojoURLs.csv'),
+    input: fs.createReadStream('mojoURLs2014.csv'),
     output: process.stdout,
     console: false
 });
@@ -59,7 +59,7 @@ rd.on('line', function(line)
                 budget = "unknown";
             }
 
-            var directorRegex = /Director(s)?:[^\s]*<font size="2">(<a href="[\w\/?=&]*Director[\w\/?=&^>]*\.htm">)?[\w\s]+/.exec(body.toString());
+            var directorRegex = /Director(s)?:[^\s]*<font size="2">(<a href="[\w\/?=&]*Director[\w\/?=&^>]*\.htm">)?[\w\s.]+/.exec(body.toString());
             if (directorRegex != null)
             {
 
@@ -70,7 +70,7 @@ rd.on('line', function(line)
                 director = "unknown";
             }
 
-            var producerRegex = /Producer(s)?:[^\s]*<font size="2">(<a href="[\w\/?=&]*Producer[\w\/?=&^>]*\.htm">)?[\w\s]+/.exec(body.toString());
+            var producerRegex = /Producer(s)?:[^\s]*<font size="2">(<a href="[\w\/?=&]*Producer[\w\/?=&^>]*\.htm">)?[\w\s.]+/.exec(body.toString());
             if (producerRegex != null)
             {
 
@@ -81,7 +81,7 @@ rd.on('line', function(line)
                 producer = "unknown";
             }
 
-            var composerRegex = /Composer(s)?:[^\s]*<font size="2">(<a href="[\w\/?=&]*Composer[\w\/?=&^>]*\.htm">)?[\w\s]+/.exec(body.toString());
+            var composerRegex = /Composer(s)?:[^\s]*<font size="2">(<a href="[\w\/?=&]*Composer[\w\/?=&^>]*\.htm">)?[\w\s.]+/.exec(body.toString());
             if (composerRegex != null)
             {
 
