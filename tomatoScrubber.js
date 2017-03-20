@@ -5,7 +5,7 @@ var fs = require('fs');
 var readline = require('readline');
 
 var rd = readline.createInterface({
-    input: fs.createReadStream('tomatoURLs2014.csv'),
+    input: fs.createReadStream('tomatoURLs2007.csv'),
     output: process.stdout,
     console: false
 });
