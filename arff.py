@@ -53,7 +53,6 @@ for i in range(0, len(data[0])):
         nominals = []
         for j in range(0, len(data)):
             if data[j][i] not in nominals:
-                print("adding " + data[j][i])
                 nominals.append(data[j][i])
         attributeDeclaration = attributeDeclaration + nominals[0]
         for index in range(1, len(nominals)):
