@@ -54,18 +54,18 @@ for i in range(0, len(data[0])):
         for j in range(0, len(data)):
             if data[j][i] not in nominals:
                 nominals.append(data[j][i])
-        attributeDeclaration = attributeDeclaration + nominals[0]
+        attributeDeclaration = attributeDeclaration + nominals[0].replace(" ", "")
         for index in range(1, len(nominals)):
-            attributeDeclaration = attributeDeclaration + "," + nominals[index]
+            attributeDeclaration = attributeDeclaration + "," + nominals[index].replace(" ", "")
         attributeDeclaration = attributeDeclaration + "}\n"
         output.write(attributeDeclaration)
 
 output.write("\n@DATA\n")
 
 for entry in data:
-    line = toValue(entry[0])
+    line = toValue(entry[0].replace(" ", ""))
     for i in range(1,len(entry)):
-        line = line + "," + entry[i]
+        line = line + "," + entry[i].replace(" ", "")
     output.write(line + "\n")
 
 
