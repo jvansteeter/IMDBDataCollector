@@ -46,10 +46,10 @@ output.write("@RELATION movies\n\n")
 
 for i in range(0, len(data[0])):
     if isNumber(data[0][i]):
-        attributeDeclaration = "@attribute " + attributeNames[i] + "\tREAL\n"
+        attributeDeclaration = "@ATTRIBUTE " + attributeNames[i].replace(" ", "") + "\tREAL\n"
         output.write(attributeDeclaration)
     else:
-        attributeDeclaration = "@attribute " + attributeNames[i] + "\t{"
+        attributeDeclaration = "@ATTRIBUTE " + attributeNames[i].replace(" ", "") + "\t{"
         nominals = []
         for j in range(0, len(data)):
             if data[j][i] not in nominals:
@@ -60,7 +60,7 @@ for i in range(0, len(data[0])):
         attributeDeclaration = attributeDeclaration + "}\n"
         output.write(attributeDeclaration)
 
-output.write("\n")
+output.write("\n@DATA\n")
 
 for entry in data:
     line = toValue(entry[0])
